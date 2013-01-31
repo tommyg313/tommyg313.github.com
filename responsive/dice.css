@@ -2,3 +2,7 @@
 #no-dice{
 	visibility: hidden;
 }
+
+#dice{
+	visibility: visible;
+}
