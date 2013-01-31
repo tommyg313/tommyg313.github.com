@@ -1,8 +1,4 @@
 
 #no-dice{
-	display: none;
-}
-
-#yes-dice{
-	display: block;
+	visibility: hidden;
 }
