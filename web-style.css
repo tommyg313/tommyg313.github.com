@@ -4,14 +4,14 @@ body{
 
 div{
 	margin-left: 7%;
-	font-size: 14pt;
+	font-size: 12pt;
 	margin-top: 0%;
 	margin-bottom: 2%;
 }
 
 p{
 	margin-left: 7%;
-	font-size: 14pt;
+	font-size: 12pt;
 	margin-top: 0;
 	
 }
@@ -25,11 +25,14 @@ ul {
 	margin-left: 4%;
 	font-size: 18pt;
 	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 5px;
 
 }
 
 .bold-heading{
 	font-weight: bold;
+	margin-top: 
 	
 }
 
@@ -46,7 +49,6 @@ ul {
 
 
 .main-list{
-	
 	margin-left: 2%;
 }
 
