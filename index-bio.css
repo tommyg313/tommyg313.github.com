@@ -1,0 +1,54 @@
+
+.index-p{
+	font-family: Calibri;
+	font-size: 18pt;
+	color: white;
+	margin-left: 6%;
+	
+}
+
+.index-header{
+	font-family: Jing Jing;
+	font-size: 45pt;
+	margin-left: 6%;
+	/*color: rgb(18,77,184);*/
+	color: rgb(255,255,255);
+}
+
+.index-body{
+	background-color: rgb(15,62,149);
+}
+
+#pic{
+	border: solid 3px white;
+	margin-left: 12%;
+	margin-bottom: 2%;
+	margin-top: 1%;
+
+}
+
+#bio-link, #resume-link{
+	font-family: Calibri;
+	font-size: 30pt;
+	color: white;
+	margin-left: 10%;
+	
+}
+
+
+.bio-body{
+	font-family: Calibri;
+	background-image: url('mt-washington.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: rgb(254,132,50);
+}
+
+.bio-header{
+	margin-left: 5%;
+	font-size: 36pt;
+	margin-top: 5%;
+}
+
+
