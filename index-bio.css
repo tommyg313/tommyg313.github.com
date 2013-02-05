@@ -1,17 +1,14 @@
-
 .index-p{
 	font-family: Calibri;
 	font-size: 18pt;
 	color: white;
 	margin-left: 6%;
-	
 }
 
 .index-header{
 	font-family: Jing Jing;
 	font-size: 45pt;
 	margin-left: 6%;
-	/*color: rgb(18,77,184);*/
 	color: rgb(255,255,255);
 }
 
@@ -24,7 +21,6 @@
 	margin-left: 12%;
 	margin-bottom: 2%;
 	margin-top: 1%;
-
 }
 
 #bio-link, #resume-link{
@@ -32,9 +28,7 @@
 	font-size: 30pt;
 	color: white;
 	margin-left: 10%;
-	
 }
-
 
 .bio-body{
 	font-family: Calibri;

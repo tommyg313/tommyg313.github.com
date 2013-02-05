@@ -1,0 +1,62 @@
+body{
+	font-family: Calibri;
+}
+
+div{
+	margin-left: 7%;
+	font-size: 12pt;
+	margin-top: 0%;
+	margin-bottom: 1%;
+}
+
+
+ul {
+	margin: 0%; 
+	margin-left: 2%;
+
+}
+
+.heading{
+	margin-left: 4%;
+	font-size: 18pt;
+	font-weight: bold;
+	margin-top: 1%;
+	margin-bottom: 1%;
+
+}
+
+.bold-heading{
+	font-weight: bold;
+	margin-top: 0%;
+	
+}
+
+.title{
+	font-style: italic;
+}
+
+#name{
+	margin-top: 5%;
+	text-align: center;
+	font-size: 36pt;
+	border-bottom: groove 15px;
+	margin-right: 50%;
+}
+
+
+.main-list{
+	margin-left: 2%;
+
+}
+
+.nested-list{
+	margin-left: 0;
+}
+
+
+.whitespace{
+	margin-top: 15%;
+}
+
+
+
