@@ -49,6 +49,17 @@ function myInformation(position)
 	console.log(my_lat);
 	console.log(my_lng);
 	
+	current_loc = new google.maps.LatLng(my_lat,my_lng);
+	current_marker = new google.maps.Marker({
+		position: current_loc,
+		title: "You are here!"
+	});
+	current_marker.setMap(map);
+	
+	my_info = "";
+	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng();
+	
+	newInfoWindow(current_marker,my_info);
 	console.log("about to do red line shit");
 	//waldo_carmen_setup()
 	
