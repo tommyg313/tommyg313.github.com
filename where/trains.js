@@ -66,8 +66,7 @@ function myInformation(position)
 	red_line()
 
 	my_info = "";
-	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng() +
-		"<br/>" + "The nearest T station to you is " + closest_station + " and is " + station_dist + " miles away.";
+	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng() + "<br/>" + "The nearest T station to you is " + closest_station + " and is " + station_dist + " miles away.";
 	
 	
 }
