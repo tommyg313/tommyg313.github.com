@@ -65,6 +65,11 @@ function myInformation(position)
 	
 	red_line()
 
+	my_info = "";
+	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng() +
+		"<br/>" + "The nearest T station to you is " + closest_station + " and is " + station_dist + " miles away.";
+	
+	
 }
 
 
@@ -225,6 +230,8 @@ function red_line()
 	
 	station_locs = new Array();
 	
+	station_dist = 9999999;
+	
 	for(i=0;i<station.length;i++)
 	{
 		var placement = new google.maps.LatLng(station[i]['lat'],station[i]['lon']);
@@ -237,6 +244,14 @@ function red_line()
 			icon: 'red_line_logo.png'
 		});
 			
+		d = distance(station[i]['lat'],current_loc.lat(),station[i]['lon'],current_loc.lng());
+		
+		if(d<station_dist)
+		{
+			station_dist = d;
+			cosest_station = station[i]['name'];
+		}
+		
 		var arrival_times_note = red_line_info(station[i]);
 		
 		newInfoWindow(station_marker,arrival_times_note);
