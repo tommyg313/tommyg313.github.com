@@ -11,10 +11,9 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
-	getMyLocation()
 	
 	waldo_carmen_setup()
-	
+	getMyLocation()
 	red_line()
 }
 
@@ -28,14 +27,13 @@ function getMyLocation() {
 			my_lng = position.coords.longitude;
 		});
 		
-		my_loc = new google.maps.LatLng(my_lat,my_lng);
+		my_loc = new google.maps.LatLng(my_lat, my_lng);
 		my_marker = new google.maps.Marker({
 			position: my_loc,
 			title: "You are here!"
 		});
 	
 		my_marker.setMap(map);
-		
 		
 	}
 	else {
