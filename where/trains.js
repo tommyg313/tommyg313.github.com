@@ -51,6 +51,8 @@ function myInformation(position)
 	my_lat = position.coords.latitude;
 	my_lng = position.coords.longitude;
 	
+	console.log(my_lat);
+	console.log(my_lng);
 	
 	/*
 	my_info = "";
