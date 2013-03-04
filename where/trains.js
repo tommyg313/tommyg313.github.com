@@ -230,6 +230,8 @@ function red_line()
 			
 		d = distance(station[i]['lat'],current_loc.lat(),station[i]['lon'],current_loc.lng());
 		
+		console.log(d);
+		
 		if(d<station_dist)
 		{
 			station_dist = d;
