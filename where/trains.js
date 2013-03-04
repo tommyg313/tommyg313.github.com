@@ -13,12 +13,13 @@ function initialize() {
 		
 	getMyLocation();
 	
-	console.log(current_loc.lat());
-	console.log(current_loc.lng());
+	//console.log(current_loc.lat());
+	//console.log(current_loc.lng());
 	
 	//myInformation(my_location[0],my_location[1]);
 	
-	waldo_carmen_setup()
+	console.log("about to do red line shit");
+	//waldo_carmen_setup()
 	
 	red_line()
 }
@@ -28,33 +29,35 @@ function getMyLocation() {
 	lng = 0;
 	if (navigator.geolocation) {
 		// the navigator.geolocation object is supported on your browser
-		position = navigator.geolocation.getCurrentPosition();
-		
-		console.log(position.coords.latitude);
-		console.log(position.coords.longitude);
-		//return ([current_loc,current_marker]);
+		position = navigator.geolocation.getCurrentPosition(myInformation);
 	}
 	else {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
 	}
 	
+	/*
 	current_loc = new google.maps.LatLng(lat,lng);
 	current_marker = new google.maps.Marker({
 		position: current_loc,
 		title: "You are here!"
 	});
 	current_marker.setMap(map);
-	
+	*/
 	console.log("finished getlocation");
 }
 
-function myInformation(me_loc,me_marker)
+function myInformation(position)
 {
-
+	my_lat = position.coords.latitude;
+	my_lng = position.coords.longitude;
+	
+	
+	/*
 	my_info = "";
 	my_info = "Position:" + "<br/>" + "Latitude: " + me_loc.lat() + "<br/>" + "Longitude: " + me_loc.lng();
 	
 	newInfoWindow(me_marker,my_info);
+	*/
 }
 
 
