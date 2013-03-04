@@ -13,8 +13,6 @@ function initialize() {
 		
 	getMyLocation();
 	
-	//console.log(current_loc.lat());
-	//console.log(current_loc.lng());
 	
 	
 }
@@ -30,24 +28,12 @@ function getMyLocation() {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
 	}
 	
-	/*
-	current_loc = new google.maps.LatLng(lat,lng);
-	current_marker = new google.maps.Marker({
-		position: current_loc,
-		title: "You are here!"
-	});
-	current_marker.setMap(map);
-	*/
-	console.log("finished getlocation");
 }
 
 function myInformation(position)
 {
 	my_lat = position.coords.latitude;
 	my_lng = position.coords.longitude;
-	
-	console.log(my_lat);
-	console.log(my_lng);
 	
 	current_loc = new google.maps.LatLng(my_lat,my_lng);
 	current_marker = new google.maps.Marker({
@@ -56,12 +42,12 @@ function myInformation(position)
 	});
 	current_marker.setMap(map);
 	
+	map.panTo(current_loc);
+	
 	waldo_carmen_setup()
 	
 	red_line()
-
-	//console.log("nearest station: " + closest_station);
-	//console.log("distance: " + station_dist);
+	
 	my_info = "";
 	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng() + "<br/>" + "The nearest T station to you is " + closest_station + " and is " + station_dist + " miles away.";
 	
