@@ -18,8 +18,8 @@ function initialize() {
 }
 
 function getMyLocation() {
-	var my_lat = 0;
-	var my_lng = 0;
+	var my_lat = 7;
+	var my_lng = 90;
 	if (navigator.geolocation) {
 		// the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position) {
