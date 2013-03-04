@@ -249,7 +249,7 @@ function red_line()
 		if(d<station_dist)
 		{
 			station_dist = d;
-			cosest_station = station[i]['name'];
+			closest_station = station[i]['name'];
 		}
 		
 		var arrival_times_note = red_line_info(station[i]);
