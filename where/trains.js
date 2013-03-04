@@ -27,6 +27,10 @@ function getMyLocation() {
 			my_lng = position.coords.longitude;
 		});
 		
+		console.log("Lat: " + my_lat);
+		console.log("Lng: " + my_lng);
+		
+		/*
 		my_loc = new google.maps.LatLng(my_lat, my_lng);
 		my_marker = new google.maps.Marker({
 			position: my_loc,
@@ -37,7 +41,7 @@ function getMyLocation() {
 		console.log("Lng: " + my_loc.lng());
 		
 		my_marker.setMap(map);
-		
+		*/
 	}
 	else {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
