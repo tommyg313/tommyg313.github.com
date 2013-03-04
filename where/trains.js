@@ -253,6 +253,13 @@ function getMyLocation() {
 			lng = position.coords.longitude;
 			console.log("Lat: " + lat);
 			console.log("Lon: " + lng);
+			
+			current_loc = new google.maps.LatLng(lat,lng);
+			current_marker = new google.maps.Marker({
+				position: current_loc,
+				title: "You are here!"
+			});
+			current_marker.setMap(map);
 		});
 	}
 	else {
