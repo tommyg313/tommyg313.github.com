@@ -60,8 +60,8 @@ function myInformation(position)
 	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng();
 	
 	newInfoWindow(current_marker,my_info);
-	console.log("about to do red line shit");
-	//waldo_carmen_setup()
+
+	waldo_carmen_setup()
 	
 	red_line()
 
