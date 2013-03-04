@@ -13,8 +13,6 @@ function initialize() {
 		
 	getMyLocation();
 	
-	
-	
 }
 
 function getMyLocation() {
@@ -22,7 +20,7 @@ function getMyLocation() {
 	lng = 0;
 	if (navigator.geolocation) {
 		// the navigator.geolocation object is supported on your browser
-		position = navigator.geolocation.getCurrentPosition(myInformation);
+		position = navigator.geolocation.getCurrentPosition(findLocations);
 	}
 	else {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
@@ -30,7 +28,7 @@ function getMyLocation() {
 	
 }
 
-function myInformation(position)
+function findLocations(position)
 {
 	my_lat = position.coords.latitude;
 	my_lng = position.coords.longitude;
@@ -73,33 +71,11 @@ function distance(lat1,lat2,lon1,lon2){
 	return (R * c);
 }
 
-function midpoint(lat1,lat2,lon1,lon2){
-	//MIDPOINT BETWEEN TWO POINTS
-	lat1 = toRad(lat1);
-	lat2 = toRad(lat2);
-	lon1 = toRad(lon1);
-	lon2 = toRad(lon2);
-	
-	var dLon = (lon2 - lon1);
-	var Bx = Math.cos(lat2) * Math.cos(dLon);
-	var By = Math.cos(lat2) * Math.sin(dLon);
-	var lat3 = Math.atan2(Math.sin(lat1)+Math.sin(lat2),
-                      Math.sqrt( (Math.cos(lat1)+Bx)*(Math.cos(lat1)+Bx) + By*By ) ); 
-	var lon3 = lon1 + Math.atan2(By, Math.cos(lat1) + Bx);
-	
-	lat3 = toDeg(lat3);
-	lon3 = toDeg(lon3);
-	
-	return([lat3,lon3]);
-}
 
 function toRad(deg) {
 	return (deg * Math.PI / 180);
 }
 
-function toDeg(rad){
-	return (rad*180/Math.PI);
-}
 
 function waldo_carmen_setup(){
 	try{
@@ -153,7 +129,6 @@ function waldo_carmen(){
 					title: wc_name,
 					icon: image
 				});
-				
 				
 				newInfoWindow(wc_marker,wc_note);
 				
@@ -229,9 +204,7 @@ function red_line()
 		});
 			
 		d = distance(station[i]['lat'],current_loc.lat(),station[i]['lon'],current_loc.lng());
-		
-		console.log(d);
-		
+				
 		if(d<station_dist)
 		{
 			station_dist = d;
@@ -285,12 +258,5 @@ function red_line_info(current_station)
 	
 	return complete_note;
 
-
 }
-	
-
-	
-	
-	
-	
 	
