@@ -2,6 +2,7 @@
 function initialize() {
 
 	me_loc = new google.maps.LatLng(42.4060089, -71.1169065);
+	var loc = new google.maps.LatLng(42.4133919,-71.1201833);
 	
 	var myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
@@ -11,43 +12,46 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	
-	getMyLocation()
+	var infowindow = new google.maps.InfoWindow();
 	
+	my_marker = new google.maps.Marker({
+		position: me_loc,
+		title: "IMMA RIGHT HERE!!"
+	});
+	my_marker.setMap(map);
+	
+	grace_marker = new google.maps.Marker({
+		position: loc,
+		title: "Grace's house"
+	});
+	
+	grace_marker.setMap(map);
+	
+	google.maps.event.addListener(my_marker, 'click', function() {
+		infowindow.setContent(my_marker.title);
+		infowindow.open(map, my_marker);
+	});
+	
+	
+	var d = distance(me_loc.lat(),loc.lat(),me_loc.lng(),loc.lng());
+
+	var mid = midpoint(me_loc.lat(),loc.lat(),me_loc.lng(),loc.lng());
+	
+	var mid_loc = new google.maps.LatLng(mid[0],mid[1]);
+	
+	mid_marker = new google.maps.Marker({
+		position: mid_loc,
+		title: "Midpoint!"
+	});
+	
+	mid_marker.setMap(map);
+		
+	getMyLocation()
 	waldo_carmen_setup()
 	
 	red_line()
 }
 
-function getMyLocation() {
-	var lat = 7;
-	var lng = 90;
-	if (navigator.geolocation) {
-		// the navigator.geolocation object is supported on your browser
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-		});
-		
-		console.log("Lat: " + lat);
-		console.log("Lng: " + lng);
-		
-		/*
-		my_loc = new google.maps.LatLng(my_lat, my_lng);
-		my_marker = new google.maps.Marker({
-			position: my_loc,
-			title: "You are here!"
-		});
-	
-		console.log("Lat: " + my_loc.lat());
-		console.log("Lng: " + my_loc.lng());
-		
-		my_marker.setMap(map);
-		*/
-	}
-	else {
-		alert("Geolocation is not supported by your web browser.  What a shame!");
-	}
-}
 
 function distance(lat1,lat2,lon1,lon2){
 	//DISTANCE BETWEEN TWO POINTS
@@ -267,7 +271,22 @@ function red_line_info(current_station)
 
 }
 	
-
+function getMyLocation() {
+	lat = 0;
+	lng = 0;
+	if (navigator.geolocation) {
+		// the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			console.log("Lat: " + lat);
+			console.log("Lon: " + lng);
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.  What a shame!");
+	}
+}
 	
 	
 	
