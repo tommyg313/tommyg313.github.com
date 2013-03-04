@@ -37,10 +37,9 @@ function getMyLocation() {
 				title: "You are here!"
 			});
 			current_marker.setMap(map);
-			
-			return ([current_loc,current_marker]);
 		
 		});
+		return ([current_loc,current_marker]);
 	}
 	else {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
