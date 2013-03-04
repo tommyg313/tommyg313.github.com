@@ -28,12 +28,10 @@ function getMyLocation() {
 	lng = 0;
 	if (navigator.geolocation) {
 		// the navigator.geolocation object is supported on your browser
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-			console.log("Latty: " + lat);
-			console.log("Lonny: " + lng);
-		});
+		position = navigator.geolocation.getCurrentPosition();
+		
+		console.log(position.coords.latitude);
+		console.log(position.coords.longitude);
 		//return ([current_loc,current_marker]);
 	}
 	else {
