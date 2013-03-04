@@ -56,18 +56,17 @@ function myInformation(position)
 	});
 	current_marker.setMap(map);
 	
-	my_info = "";
-	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng();
-	
-	newInfoWindow(current_marker,my_info);
-
 	waldo_carmen_setup()
 	
 	red_line()
 
+	//console.log("nearest station: " + closest_station);
+	//console.log("distance: " + station_dist);
 	my_info = "";
 	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng() + "<br/>" + "The nearest T station to you is " + closest_station + " and is " + station_dist + " miles away.";
 	
+	
+	newInfoWindow(current_marker,my_info);
 	
 }
 
