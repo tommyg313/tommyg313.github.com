@@ -53,6 +53,30 @@ function initialize() {
 	red_line()
 }
 
+function getMyLocation() {
+	var my_lat = 0;
+	var my_lng = 0;
+	if (navigator.geolocation) {
+		// the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			my_lat = position.coords.latitude;
+			my_lng = position.coords.longitude;
+		});
+		
+		my_loc = new new google.maps.LatLng(my_lat,my_lng);
+		my_marker = new google.maps.Marker({
+			position: my_loc,
+			title: "You are here!"
+		});
+	
+		my_marker.setMap(map);
+		
+		
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.  What a shame!");
+	}
+}
 
 function distance(lat1,lat2,lon1,lon2){
 	//DISTANCE BETWEEN TWO POINTS
@@ -272,22 +296,7 @@ function red_line_info(current_station)
 
 }
 	
-function getMyLocation() {
-	lat = 0;
-	lng = 0;
-	if (navigator.geolocation) {
-		// the navigator.geolocation object is supported on your browser
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-			console.log("Lat: " + lat);
-			console.log("Lon: " + lng);
-		});
-	}
-	else {
-		alert("Geolocation is not supported by your web browser.  What a shame!");
-	}
-}
+
 	
 	
 	
