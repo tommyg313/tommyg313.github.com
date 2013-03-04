@@ -18,17 +18,17 @@ function initialize() {
 }
 
 function getMyLocation() {
-	var my_lat = 7;
-	var my_lng = 90;
+	var lat = 7;
+	var lng = 90;
 	if (navigator.geolocation) {
 		// the navigator.geolocation object is supported on your browser
 		navigator.geolocation.getCurrentPosition(function(position) {
-			my_lat = position.coords.latitude;
-			my_lng = position.coords.longitude;
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
 		});
 		
-		console.log("Lat: " + my_lat);
-		console.log("Lng: " + my_lng);
+		console.log("Lat: " + lat);
+		console.log("Lng: " + lng);
 		
 		/*
 		my_loc = new google.maps.LatLng(my_lat, my_lng);
