@@ -46,6 +46,8 @@ function initialize() {
 	
 	mid_marker.setMap(map);
 		
+	getMyLocation()
+	
 	waldo_carmen_setup()
 	
 	red_line()
@@ -270,6 +272,22 @@ function red_line_info(current_station)
 
 }
 	
+function getMyLocation() {
+	lat = 0;
+	lng = 0;
+	if (navigator.geolocation) {
+		// the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			console.log("Lat: " + lat);
+			console.log("Lon: " + lng);
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.  What a shame!");
+	}
+}
 	
 	
 	
