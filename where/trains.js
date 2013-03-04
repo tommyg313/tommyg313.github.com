@@ -16,12 +16,7 @@ function initialize() {
 	//console.log(current_loc.lat());
 	//console.log(current_loc.lng());
 	
-	//myInformation(my_location[0],my_location[1]);
 	
-	console.log("about to do red line shit");
-	//waldo_carmen_setup()
-	
-	red_line()
 }
 
 function getMyLocation() {
@@ -53,6 +48,11 @@ function myInformation(position)
 	
 	console.log(my_lat);
 	console.log(my_lng);
+	
+	console.log("about to do red line shit");
+	//waldo_carmen_setup()
+	
+	red_line()
 	
 	/*
 	my_info = "";
