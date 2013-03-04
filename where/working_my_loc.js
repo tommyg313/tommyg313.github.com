@@ -11,12 +11,11 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 	
-	
 	my_marker = new google.maps.Marker({
 		position: me_loc,
 		title: "IMMA RIGHT HERE!!"
 	});
-	my_marker.setMap(map);
+	my_marker.setMap(map);	
 		
 	getMyLocation()
 	waldo_carmen_setup()
