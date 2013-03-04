@@ -64,13 +64,7 @@ function myInformation(position)
 	//waldo_carmen_setup()
 	
 	red_line()
-	
-	/*
-	my_info = "";
-	my_info = "Position:" + "<br/>" + "Latitude: " + me_loc.lat() + "<br/>" + "Longitude: " + me_loc.lng();
-	
-	newInfoWindow(me_marker,my_info);
-	*/
+
 }
 
 
@@ -151,7 +145,7 @@ function waldo_carmen(){
 				wc_lon = parsed[i]['loc']['longitude'];
 				wc_note = parsed[i]['loc']['note'];
 				
-				dist = distance(me_loc.lat(),wc_lat,me_loc.lng(),wc_lon);
+				dist = distance(current_loc.lat(),wc_lat,current_loc.lng(),wc_lon);
 				
 				wc_note += "<br/>Distance from you = " + dist + " miles.";
 				
