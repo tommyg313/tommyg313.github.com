@@ -33,6 +33,9 @@ function getMyLocation() {
 			title: "You are here!"
 		});
 	
+		console.log("Lat: " + my_loc.lat());
+		console.log("Lng: " + my_loc.lng());
+		
 		my_marker.setMap(map);
 		
 	}
