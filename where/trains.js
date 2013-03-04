@@ -11,9 +11,12 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
-	my_location = getMyLocation();
+	getMyLocation();
 	
-	myInformation(my_location[0],my_location[1]);
+	console.log(current_loc.lat());
+	console.log(current_loc.lng());
+	
+	//myInformation(my_location[0],my_location[1]);
 	
 	waldo_carmen_setup()
 	
@@ -30,20 +33,19 @@ function getMyLocation() {
 			lng = position.coords.longitude;
 			console.log("Lat: " + lat);
 			console.log("Lon: " + lng);
-			
-			current_loc = new google.maps.LatLng(lat,lng);
-			current_marker = new google.maps.Marker({
-				position: current_loc,
-				title: "You are here!"
-			});
-			current_marker.setMap(map);
-		
 		});
-		return ([current_loc,current_marker]);
+		//return ([current_loc,current_marker]);
 	}
 	else {
 		alert("Geolocation is not supported by your web browser.  What a shame!");
 	}
+	
+	current_loc = new google.maps.LatLng(lat,lng);
+	current_marker = new google.maps.Marker({
+		position: current_loc,
+		title: "You are here!"
+	});
+	current_marker.setMap(map);
 }
 
 function myInformation(me_loc,me_marker)
