@@ -2,7 +2,6 @@
 function initialize() {
 
 	me_loc = new google.maps.LatLng(42.4060089, -71.1169065);
-	var loc = new google.maps.LatLng(42.4133919,-71.1201833);
 	
 	var myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
@@ -11,40 +10,6 @@ function initialize() {
 	};
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	
-	var infowindow = new google.maps.InfoWindow();
-	
-	my_marker = new google.maps.Marker({
-		position: me_loc,
-		title: "IMMA RIGHT HERE!!"
-	});
-	my_marker.setMap(map);
-	
-	grace_marker = new google.maps.Marker({
-		position: loc,
-		title: "Grace's house"
-	});
-	
-	grace_marker.setMap(map);
-	
-	google.maps.event.addListener(my_marker, 'click', function() {
-		infowindow.setContent(my_marker.title);
-		infowindow.open(map, my_marker);
-	});
-	
-	
-	var d = distance(me_loc.lat(),loc.lat(),me_loc.lng(),loc.lng());
-
-	var mid = midpoint(me_loc.lat(),loc.lat(),me_loc.lng(),loc.lng());
-	
-	var mid_loc = new google.maps.LatLng(mid[0],mid[1]);
-	
-	mid_marker = new google.maps.Marker({
-		position: mid_loc,
-		title: "Midpoint!"
-	});
-	
-	mid_marker.setMap(map);
 		
 	getMyLocation()
 	
@@ -63,7 +28,7 @@ function getMyLocation() {
 			my_lng = position.coords.longitude;
 		});
 		
-		my_loc = new new google.maps.LatLng(my_lat,my_lng);
+		my_loc = new google.maps.LatLng(my_lat,my_lng);
 		my_marker = new google.maps.Marker({
 			position: my_loc,
 			title: "You are here!"
