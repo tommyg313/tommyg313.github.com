@@ -31,8 +31,8 @@ function getMyLocation() {
 		navigator.geolocation.getCurrentPosition(function(position) {
 			lat = position.coords.latitude;
 			lng = position.coords.longitude;
-			console.log("Lat: " + lat);
-			console.log("Lon: " + lng);
+			console.log("Latty: " + lat);
+			console.log("Lonny: " + lng);
 		});
 		//return ([current_loc,current_marker]);
 	}
@@ -46,6 +46,8 @@ function getMyLocation() {
 		title: "You are here!"
 	});
 	current_marker.setMap(map);
+	
+	console.log("finished getlocation");
 }
 
 function myInformation(me_loc,me_marker)
