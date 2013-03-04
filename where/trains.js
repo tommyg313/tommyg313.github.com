@@ -11,8 +11,10 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
-	getMyLocation()
-	myInformation()
+	my_location = getMyLocation()
+	
+	myInformation(my_location[0],my_location[1])
+	
 	waldo_carmen_setup()
 	
 	red_line()
@@ -35,6 +37,9 @@ function getMyLocation() {
 				title: "You are here!"
 			});
 			current_marker.setMap(map);
+			
+			return (current_loc,current_marker);
+		
 		});
 	}
 	else {
@@ -42,13 +47,13 @@ function getMyLocation() {
 	}
 }
 
-function myInformation()
+function myInformation(me_loc,me_marker)
 {
 
 	my_info = "";
-	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng();
+	my_info = "Position:" + "<br/>" + "Latitude: " + me_loc.lat() + "<br/>" + "Longitude: " + me_loc.lng();
 	
-	newInfoWindow(current_marker,my_info);
+	newInfoWindow(me_marker,my_info);
 }
 
 
@@ -226,6 +231,7 @@ function red_line()
 		newInfoWindow(station_marker,arrival_times_note);
 		
 		station_marker.setMap(map);
+		
 	}
 	
 	var line = new google.maps.Polyline({
