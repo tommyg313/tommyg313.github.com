@@ -11,9 +11,9 @@ function initialize() {
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 		
-	my_location = getMyLocation()
+	my_location = getMyLocation();
 	
-	myInformation(my_location[0],my_location[1])
+	myInformation(my_location[0],my_location[1]);
 	
 	waldo_carmen_setup()
 	
