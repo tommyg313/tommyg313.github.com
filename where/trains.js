@@ -1,27 +1,54 @@
 
 function initialize() {
 
-	me_loc = new google.maps.LatLng(42.4060089, -71.1169065);
+	default_loc = new google.maps.LatLng(42.4060089, -71.1169065);
 	
 	var myOptions = {
 		zoom: 13, // The larger the zoom number, the bigger the zoom
-		center: me_loc,
+		center: default_loc,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	
 	map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-	
-	
-	my_marker = new google.maps.Marker({
-		position: me_loc,
-		title: "IMMA RIGHT HERE!!"
-	});
-	my_marker.setMap(map);
 		
 	getMyLocation()
+	myInformation()
 	waldo_carmen_setup()
 	
 	red_line()
+}
+
+function getMyLocation() {
+	lat = 0;
+	lng = 0;
+	if (navigator.geolocation) {
+		// the navigator.geolocation object is supported on your browser
+		navigator.geolocation.getCurrentPosition(function(position) {
+			lat = position.coords.latitude;
+			lng = position.coords.longitude;
+			console.log("Lat: " + lat);
+			console.log("Lon: " + lng);
+			
+			current_loc = new google.maps.LatLng(lat,lng);
+			current_marker = new google.maps.Marker({
+				position: current_loc,
+				title: "You are here!"
+			});
+			current_marker.setMap(map);
+		});
+	}
+	else {
+		alert("Geolocation is not supported by your web browser.  What a shame!");
+	}
+}
+
+function myInformation()
+{
+
+	my_info = "";
+	my_info = "Position:" + "<br/>" + "Latitude: " + current_loc.lat() + "<br/>" + "Longitude: " + current_loc.lng();
+	
+	newInfoWindow(current_marker,my_info);
 }
 
 
@@ -243,29 +270,7 @@ function red_line_info(current_station)
 
 }
 	
-function getMyLocation() {
-	lat = 0;
-	lng = 0;
-	if (navigator.geolocation) {
-		// the navigator.geolocation object is supported on your browser
-		navigator.geolocation.getCurrentPosition(function(position) {
-			lat = position.coords.latitude;
-			lng = position.coords.longitude;
-			console.log("Lat: " + lat);
-			console.log("Lon: " + lng);
-			
-			current_loc = new google.maps.LatLng(lat,lng);
-			current_marker = new google.maps.Marker({
-				position: current_loc,
-				title: "You are here!"
-			});
-			current_marker.setMap(map);
-		});
-	}
-	else {
-		alert("Geolocation is not supported by your web browser.  What a shame!");
-	}
-}
+
 	
 	
 	
