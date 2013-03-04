@@ -38,7 +38,7 @@ function getMyLocation() {
 			});
 			current_marker.setMap(map);
 			
-			return (current_loc,current_marker);
+			return ([current_loc,current_marker]);
 		
 		});
 	}
