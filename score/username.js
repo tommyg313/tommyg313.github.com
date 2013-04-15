@@ -16,7 +16,7 @@ $(function(){
 		
 		console.log(date);
 		
-		var data = {'game_title': game_title, 'username':username, 'score':score};
+		var data = {'game_title': game_title, 'username':username, 'score':score, 'created_at':date};
 		
 		$.post("http://limitless-depths-9044.herokuapp.com/submit.json", data);
 		
