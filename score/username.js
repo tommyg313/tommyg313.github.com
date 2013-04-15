@@ -1,16 +1,20 @@
 
 $(function(){
 	$("#go").click(function(){
-		console.log("clicked");
+		//console.log("clicked");
 		var username = $("#username").val();
 		var score = $("#score").val();
-		console.log(username);
-		console.log(score);
+		//console.log(username);
+		//console.log(score);
 		$("#username").val('');
 		$("#score").val('');
 		
-		var game_title = "Frogger";
+		var game_title = 'Frogger';
 		var date = new Date();
+		
+		date = String(date);
+		
+		console.log(date);
 		
 		var data = {'game_title': game_title, 'username':username, 'score':score, 'created_at':date};
 		
