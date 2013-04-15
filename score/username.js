@@ -12,9 +12,9 @@ $(function(){
 		var game_title = 'Frogger';
 		var date = new Date();
 		
-		date = String(date);
+		//date = String(date);
 		
-		console.log(date);
+		//console.log(date);
 		
 		var data = {'game_title': game_title, 'username':username, 'score':score, 'created_at':date};
 		
