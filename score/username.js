@@ -9,10 +9,12 @@ $(function(){
 		$("#username").val('');
 		$("#score").val('');
 		
-		//$.post("http://limitless-depths-9044.herokuapp.com/hello", { "username":username, "score":score } );
-
-		var text = '{ "username":'+username+', "score":'+score+' }';
-		$.post("http://localhost:3000/stuff",'{"name":"Tom","age":"22"}');
+		var game_title = "Frogger";
+		var date = new Date();
+		
+		var data = {'game_title': game_title, 'username':username, 'score':score, 'created_at':date};
+		
+		$.post("http://limitless-depths-9044.herokuapp.com/submit.json", data);
 		
 	});
 });
