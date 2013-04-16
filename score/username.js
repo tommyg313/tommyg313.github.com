@@ -7,7 +7,7 @@ $(function(){
 		$("#username").val('');
 		$("#score").val('');
 		
-		var score = 2100;
+		int score = 2100;
 		var game_title = 'Frogger';
 		var date = new Date();
 		
