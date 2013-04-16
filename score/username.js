@@ -3,12 +3,11 @@ $(function(){
 	$("#go").click(function(){
 		//console.log("clicked");
 		var username = $("#username").val();
-		var score = $("#score").val();
-		//console.log(username);
-		//console.log(score);
+		//var score = $("#score").val();
 		$("#username").val('');
 		$("#score").val('');
 		
+		var score = 25;
 		var game_title = 'Frogger';
 		var date = new Date();
 		
