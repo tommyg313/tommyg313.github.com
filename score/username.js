@@ -8,7 +8,7 @@ $(function(){
 		$("#score").val('');
 		
 		//var score = 2100.0;
-		var game_title = 'Frogger';
+		var game_title = 'MegaMan';
 		var date = new Date();
 		
 		//date = String(date);
